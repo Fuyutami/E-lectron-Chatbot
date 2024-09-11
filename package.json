@@ -1,0 +1,57 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "rstart": "cd ui && npm start",
+    "estart": "electron .",
+    "electron-build": "electron-builder",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_quick_start"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "electron": "^29.1.6",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.19.1",
+    "openai": "^4.31.0",
+    "react-router-dom": "^6.22.3"
+  }
+}
